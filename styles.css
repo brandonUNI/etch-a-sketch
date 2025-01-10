@@ -1,11 +1,10 @@
-
+/*
 form {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
     gap: 8px;
     padding: 8px;
-    border: 2px solid hsl(0, 0%, 50%);
-    border-radius: 4px; /* Adjust value for more or less curve */
     margin: 8px;
     height: 25vh;
 }
@@ -14,8 +13,6 @@ form {
     margin-top: auto;
     flex-grow: 1;
     height: 12vh;
-    border: 2px solid hsl(0, 0%, 50%);
-    border-radius: 4px; /* Adjust value for more or less curve */
     display: flex;
 }
 
@@ -27,11 +24,60 @@ form {
 #grid {
     margin: 8px;
     flex-grow: 4;
-    border: 2px solid hsl(0, 0%, 50%);
-    border-radius: 4px; /* Adjust value for more or less curve */
     height: 50vh;
 }
 
+
+
+.imgbox {
+    flex: 0 1 auto;
+    width: 100%;
+}
+
+img {
+    flex-shrink: 1;
+    height: auto;
+    width: 50%;
+} 
+*/
+
 body {
     background-color: rgb(209, 227, 218);
+    margin: 8px;
+    padding: 8px;
+}
+
+.imgbox, #grid, .slidercontainer, form {
+    border: 2px solid hsl(0, 0%, 50%);
+    border-radius: 4px;
+}
+
+.imgbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+}
+
+img {
+    flex-shrink: 1;
+    height: auto;
+    max-width: 50%;
+}
+
+main {
+    display: flex;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.slidercontainer {
+    margin: 0 auto;
+    text-align: center;
+    width: 50vh;
 }
