@@ -1,8 +1,9 @@
 body {
     background-color: rgb(209, 227, 218);
-    margin: 8px;
+    margin: 0;
     padding: 8px;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
 .imgbox, #grid, .slidercontainer, form {
@@ -36,7 +37,7 @@ form {
 }
 
 .slidercontainer {
-    margin: 0 auto;
+    margin-right: auto;
     text-align: center;
     width: 50vh;
 }
@@ -48,10 +49,21 @@ form {
 
 #grid {
     margin-top: 8px;
-    height: 50vh;
-    display: flex;
+    padding: 8px;
+    display: grid;
+    width: calc(100vmin - 16px);  /* Subtract body padding (8px * 2) */
+    height: calc(100vmin - 16px); /* Subtract body padding (8px * 2) */
+    height: 100vmin;             /* Set a fixed height to define grid dimensions */
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill, minmax(0, 1fr)); /* Dynamically defined */
+    grid-template-rows: repeat(auto-fill, minmax(0, 1fr));    /* Dynamically defined */
 }
 
 p {
-    margin: 0px; /* overriding inherited margsin */
+    margin: 0px; /* overriding inherited margin */
+}
+
+.gridBox {
+    border: 2px solid hsl(0, 0%, 50%);
+    box-sizing: border-box;
 }
