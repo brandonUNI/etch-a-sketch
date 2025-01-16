@@ -1,7 +1,7 @@
 // Select the slider element
 const slider = document.querySelector("#myRange");
 
-// Update the grid size dynamically
+// Update the grid size display
 const gridSizeDisplay = document.querySelectorAll(".sliderValue");
 
 // Log the initial slider value
@@ -12,10 +12,10 @@ let gridSize = 16; // Initalize default slider value
 // Selecting the grid element
 const grid = document.querySelector("#grid");
 
-for (let i = 0; i < (gridSize * gridSize); i++) {
-    let div = document.createElement("div");
-    div.setAttribute("class", "gridBox");
-    grid.appendChild(div);
+// func to generate random rgba color
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
 
 // Function to create the grid
@@ -30,9 +30,14 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const div = document.createElement("div");
         div.classList.add("gridBox");
+        div.addEventListener("mouseenter", () => {
+            const color = random_rgba();
+            div.style["background-color"] = color;
+        });
         grid.appendChild(div);
     }
 }
+
 
 // Event listener for slider changes
 slider.addEventListener("input", () => {
@@ -46,6 +51,12 @@ slider.addEventListener("input", () => {
     createGrid(gridSize); // Regenerate the grid
 }); 
 
+// Select the image element
+const hand = document.querySelector("img");
+
+hand.addEventListener("click", () => {
+    location.reload();
+})
 
 // Initialize the grid
 createGrid(gridSize);

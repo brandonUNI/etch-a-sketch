@@ -1,15 +1,16 @@
 body {
-    background-color: rgb(209, 227, 218);
+    background-color: rgb(31, 32, 31);
+    color: rgb(237, 237, 230);
     margin: 0;
     padding: 8px;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
-.imgbox, #grid, .slidercontainer, form {
+/* .imgbox, #grid, .slidercontainer, form {
     border: 2px solid hsl(0, 0%, 50%);
     border-radius: 4px;
-}
+} */
 
 .imgbox {
     display: flex;
@@ -53,7 +54,6 @@ form {
     display: grid;
     width: calc(100vmin - 16px);  /* Subtract body padding (8px * 2) */
     height: calc(100vmin - 16px); /* Subtract body padding (8px * 2) */
-    height: 100vmin;             /* Set a fixed height to define grid dimensions */
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fill, minmax(0, 1fr)); /* Dynamically defined */
     grid-template-rows: repeat(auto-fill, minmax(0, 1fr));    /* Dynamically defined */
@@ -64,6 +64,6 @@ p {
 }
 
 .gridBox {
-    border: 2px solid hsl(0, 0%, 50%);
+    /* border: 1px solid hsl(0, 0%, 50%); /* for visualization*/
     box-sizing: border-box;
 }
